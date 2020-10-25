@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+  <style>
+    .box {
+      float: left;
+      width: 150px;
+      height: 200px;
+      padding: 30px;
+      background: #EEE;
+      box-shadow: inset 0 0 30px -5px;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .circle {
+      display: flex;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #EEE;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+    .five {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .four {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      top: 15%;
+      left: 15%;
+      z-index: 2;
+    }
+
+    .three {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      top: 25%;
+      left: 25%;
+      z-index: 3;
+    }
+
+    .two {
+      position: absolute;
+      width: 30%;
+      height: 30%;
+      top: 35%;
+      left: 35%;
+      z-index: 4;
+    }
+
+    .one {
+      position: absolute;
+      width: 20%;
+      height: 20%;
+      top: 40%;
+      left: 40%;
+      z-index: 5;
+    }
+  </style>
+  <div class="box">
+    <div style="
+        height: 100%;
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+      ">
+      <canvas id="mycanvas" width=150px height=200px>
+        您的浏览器不支持canvas标签，无法看到图形
+      </canvas>
+    </div>
+  </div>
+  <div class="box">
+    <div style="
+        display: flex;
+        justify-content: space-between;
+      ">
+      <div class="circle" style="position: relative;">
+        <div class="five circle green">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle green three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle green one">
+
+        </div>
+      </div>
+    </div>
+    <div style="
+        display: flex;
+        justify-content: center;
+      ">
+            <div class="circle" style="position: relative;">
+              <div class="five circle red">
+      
+              </div>
+              <div class="circle four">
+      
+              </div>
+              <div class="circle red three">
+      
+              </div>
+              <div class="circle two">
+      
+              </div>
+              <div class="circle red one">
+      
+              </div>
+            </div>
+    </div>
+    <div style="
+        display: flex;
+        justify-content: flex-end;
+      ">
+            <div class="circle" style="position: relative;">
+              <div class="five circle black">
+      
+              </div>
+              <div class="circle four">
+      
+              </div>
+              <div class="circle black three">
+      
+              </div>
+              <div class="circle two">
+      
+              </div>
+              <div class="circle black one">
+      
+              </div>
+            </div>
+    </div>
+  </div>
+  <div class="box">
+    <div style="
+      display: flex;
+      justify-content: space-between;
+    ">
+            <div class="circle" style="position: relative;">
+        <div class="five circle green">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle green three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle green one">
+
+        </div>
+      </div>
+            <div class="circle" style="position: relative;">
+        <div class="five circle black">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle black three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle black one">
+
+        </div>
+      </div>
+    </div>
+    <div style="
+      display: flex;
+      justify-content: center;
+    ">
+            <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+    </div>
+    <div style="
+      display: flex;
+      justify-content: space-between;
+    ">
+            <div class="circle" style="position: relative;">
+        <div class="five circle black">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle black three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle black one">
+
+        </div>
+      </div>
+            <div class="circle" style="position: relative;">
+        <div class="five circle green">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle green three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle green one">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div style="height: 40%;">
+      <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;">
+              <div class="circle" style="position: relative;">
+        <div class="five circle green">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle green three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle green one">
+
+        </div>
+      </div>
+              <div class="circle" style="position: relative;">
+        <div class="five circle green">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle green three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle green one">
+
+        </div>
+      </div>
+      </div>
+    </div>
+    <div style="height: 60%;">
+      <div style="
+    display: flex;
+    justify-content: center;
+  ">
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+      </div>
+      <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  ">
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="box">
+    <div style="height: 40%;">
+      <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;">
+        <div class="circle" style="align-self: flex-start;position: relative;">
+          <div class="five circle green">
+      
+          </div>
+          <div class="circle four">
+  
+          </div>
+          <div class="circle green three">
+  
+          </div>
+          <div class="circle two">
+  
+          </div>
+          <div class="circle green one">
+  
+          </div>
+        </div>
+        <div class="circle" style="align-self: center;position: relative;">
+          <div class="five circle green">
+      
+          </div>
+          <div class="circle four">
+  
+          </div>
+          <div class="circle green three">
+  
+          </div>
+          <div class="circle two">
+  
+          </div>
+          <div class="circle green one">
+  
+          </div>
+        </div>
+        <div class="circle" style="align-self: flex-end;position: relative;">
+          <div class="five circle green">
+      
+          </div>
+          <div class="circle four">
+  
+          </div>
+          <div class="circle green three">
+  
+          </div>
+          <div class="circle two">
+  
+          </div>
+          <div class="circle green one">
+  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 60%;">
+      <div style="
+    display: flex;
+    justify-content: center;
+  ">
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+      </div>
+      <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  ">
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+              <div class="circle" style="position: relative;">
+        <div class="five circle red">
+
+        </div>
+        <div class="circle four">
+
+        </div>
+        <div class="circle red three">
+
+        </div>
+        <div class="circle two">
+
+        </div>
+        <div class="circle red one">
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript">
+    var c = document.getElementById("mycanvas");
+    var ctx = c.getContext("2d");
+    ctx.strokeStyle = "green";
+    ctx.fillStyle = "red"
+    ctx.beginPath()
+
+    // cxt.arc(230,200,10*(1+0.85*i),-45*Math.PI/180,45*Math.PI/180,false)
+    ctx.arc(75, 100, 20, 0, 2 * Math.PI, false)
+    // 绘制已定义的路径
+    ctx.fill()
+    ctx.closePath()
+    for (var i = 1; i < 3; i++) {
+      ctx.lineWidth = 4 + 1 * i
+      ctx.beginPath()
+      // cxt.arc(230,200,10*(1+0.85*i),-45*Math.PI/180,45*Math.PI/180,false)
+      ctx.arc(75, 100, 10 * (3 + 1 * i), 0, 2 * Math.PI, false)
+      // 绘制已定义的路径
+      ctx.stroke()
+      ctx.closePath()
+    }
+  </script>
+</body>
+
+</html>
